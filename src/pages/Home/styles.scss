@@ -1,0 +1,102 @@
+.green{
+  
+    animation: showup 0.3s ;
+    animation-iteration-count: 1;
+
+}
+
+.home{
+    animation: showup 0.3s ;
+    animation-iteration-count: 1;
+
+}
+
+.blue{
+
+    animation: showup 0.3s ;
+    animation-iteration-count: 1;  
+
+}
+
+.dinner{
+  
+    animation: showup 0.3s ;
+    animation-iteration-count: 1;
+}
+
+.col1, .col2, .col3, .col4, .col5, .col6{
+    animation: showup 0.3s ;
+    animation-iteration-count: 1;
+}
+
+
+.hero-text{
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 5%, rgba(0,255,239,0) 100%);
+}
+
+.see-more{
+    animation: moveUpDown 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes moveUpDown {
+    0%{
+        transform: translateY(40px);
+
+    }
+    50%{
+        transform: translateY(20px);
+
+    }
+    100%{
+        transform: translateY(40px);
+
+    }
+}
+
+
+@keyframes showup {
+    0%{
+        transform: translateY(40px);
+        opacity: 0.3;
+    }
+
+    25%{
+        transform: translateY(30px);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(20px);
+        opacity: 0.8;
+    }
+
+    75%{
+        transform: translateY(10px);
+        opacity: 0.9;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+//Login CSS
+.logo{
+    height: 40px;
+    width: 40px;
+}
+
+form, .termsservices{
+    font-family: 'Helvetica';
+}
+
+.forgetpassword:hover{
+    text-decoration: solid !important;
+    text-decoration-color: black !important;
+    text-decoration-line: underline !important;
+    text-decoration-thickness: from-font !important;
+}

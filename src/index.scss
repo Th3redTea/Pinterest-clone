@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+  // --gray-400: #ebebeb;
+  // --gray-500: #dddddd;
+  // --gray-600: #b0b0b0;
+  // --gray-700: #717171;
+  // --gray-800: #484848;
+  // --gray-900: #222222;
+  // --gray-1000: #000000;
+
+  // /* Scarlet */
+  // --scarlet-100: #d70466;
+  // --scarlet-200: #92174d;
+  // --scarlet-300: #861453;
+
+  // /* Purple */
+  // --purple-100: #440589;
+  // --purple-200: #460479;
+
+  // /* Purple magenta */
+  // --purpleMagenta-100: #6f019c;
+  // --purpleMagenta-200: #59086e;
+
+  // /* Crimson */
+  // --crimson-100: #c6017e;
+
+  // /* Magenta */
+  // --magenta-100: #6c0d63;
+
+  // /* Purple violet */
+  // --purpleViolet-100: #3b07bb;
+
+  // /* Vermilion */
+  // --vermilion-100: #c13515;
+  // --vermilion-200: #b32505;
+
+  // /* Blue */
+  // --blue-100: #428bff;
+
+  // /* Green */
+  // $green-100: #008a05;
+
+  // /* Orange */
+  // $orange-100: #e07912;  
+
+
+@font-face {
+font-family: 'Segio UI';
+src: local('Segio UI'), url('../public/assets/fonts/SegioUI/Segoe_UI.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Segio UI Bold';
+src: local('Segio UI'), url('../public/assets/fonts/SegioUI/Segoe_UI_Bold.woff') format('woff');
+}
+@font-face {
+font-family: 'Helvetica-Bold';
+src: local('Segio UI'), url('../public/assets/fonts/Helvetica/Helvetica-Bold.ttf') format('ttf');
+}
+@font-face {
+font-family: 'Helvetica';
+src: local('Segio UI'), url('../public/assets/fonts/Helvetica/Helvetica.ttf') format('ttf');
+}
+
+
+
+body{
+    overflow-x: hidden;
+  font-family: 'Segio UI Bold';
+}
+
+a{
+  text-decoration: none;
+}
+
+
