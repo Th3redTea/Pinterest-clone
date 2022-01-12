@@ -49,7 +49,7 @@ function Form(){
 
 function Login({position}) {
 
-    var [heroTheme, setHeroThem] = useState('darkYello');
+    var [heroTheme] = useState('darkYello');
 
 
     return (

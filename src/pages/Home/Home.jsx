@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, {useState} from 'react'
 import Header from '../../components/Header'
 import { flowers } from '../../helpers/HomeData'
 import './styles.scss';
