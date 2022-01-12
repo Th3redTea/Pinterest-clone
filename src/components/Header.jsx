@@ -39,7 +39,7 @@ function NavBar() {
 
 function Header() {
     return (
-        <header className='flex p-6 justify-between bg-white'>
+        <header id='header' className='flex p-6 justify-between bg-white'>
             <Logo />
             <NavBar />
         </header>

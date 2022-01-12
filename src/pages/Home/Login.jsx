@@ -75,7 +75,7 @@ function Login({position}) {
                 
             </div>
             <div className='w-[20%] relative'>
-            <Link to='hero' smooth={true}>
+            <Link to='header' smooth={true}>
                 <button className={`see-more flex items-center justify-center rounded-full h-[54px] w-[54px] absolute top-[16px] ${
                     heroTheme === 'darkYello'
                     ? 'bg-darkYello'
