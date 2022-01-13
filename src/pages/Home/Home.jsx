@@ -5,7 +5,7 @@ import './styles.scss';
 import { Icon } from '@iconify/react';
 // import Login from './Login';
 import Slide from 'react-reveal/Slide';
-import {Link, animateScroll as scroll} from 'react-scroll';
+import {Link} from 'react-scroll';
 import SignUp from './SignUp';
 
 
