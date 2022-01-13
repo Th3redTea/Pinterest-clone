@@ -3,16 +3,17 @@ import Header from '../../components/Header'
 import { flowers } from '../../helpers/HomeData'
 import './styles.scss';
 import { Icon } from '@iconify/react';
-import Login from './Login';
+// import Login from './Login';
 import Slide from 'react-reveal/Slide';
-import {Link} from 'react-scroll';
+import {Link, animateScroll as scroll} from 'react-scroll';
+import SignUp from './SignUp';
 
 
 
 function ColumnHeroPictures({idx, src, alt}){
 
     return(
-        <div className='grid grid-cols-6'>
+        <div className='grid grid-cols-6 gap-4 -z-10 w-[1500px] bg-white relative'>
             <Slide bottom>
 
             <div className='col1 mt-24'>
@@ -103,25 +104,23 @@ function ColumnHeroPictures({idx, src, alt}){
 function Hero(){
 
     var [heroTheme, setHeroThem] = useState('darkYello');
-
  
 
     return(
-        <div id='hero' className='mt-6 h-screen w-[1500px] relative' >
-            <ColumnHeroPictures />
-            <div className='hero-text w-full h-[500px] absolute top-0 bg-transparent flex flex-col items-center'>
+        <div id='hero' className='hero mt-6 h-screen absolute top-0 ' >
+            <div className='hero-text w-full  bg-transparent flex flex-col items-center  w-screen mt-36'>
             <h1 className='text-6xl'>Get Your Next</h1>
               
                 {
                    heroTheme === 'green' 
-                            ? <Slide bottom> <h1 className='green text-6xl text-green'>Green thumb idea</h1> </Slide>
+                            ? <h1 className='green text-6xl text-green'><Slide bottom> Green thumb idea</Slide></h1> 
                             : heroTheme === 'blue'
-                            ? <Slide bottom> <h1 className='blue text-6xl text-bleu-100'>New look outfit</h1> </Slide>
+                            ?  <h1 className='blue text-6xl text-bleu-100'><Slide bottom>New look outfit</Slide></h1> 
                             : heroTheme === 'darkYello'
-                            ? <Slide bottom> <h1 className='dinner text-6xl text-darkYello'>Weeknight dinner</h1> </Slide>
+                            ?  <h1 className='dinner text-6xl text-darkYello'><Slide bottom>Weeknight dinner</Slide></h1> 
                             : heroTheme === "darkGreen"
-                            ? <Slide bottom> <h1 className='home text-6xl text-darkGreen'>Home decor idea</h1> </Slide>
-                            : <Slide bottom> <h1 className='green text-6xl text-green'>Green thumb idea</h1> </Slide>
+                            ?  <h1 className='home text-6xl text-darkGreen'><Slide bottom>Home decor idea</Slide></h1> 
+                            :  <h1 className='green text-6xl text-green'><Slide bottom>Green thumb idea</Slide></h1> 
                 }
 
 
@@ -135,7 +134,7 @@ function Hero(){
 
                 <button onClick={() => setHeroThem("green")} className={`h-3 w-3 bg-gray rounded-full ${heroTheme === "green" ? "bg-green" : "gray"}`}></button>
                 </div>
-                <Link to='login' smooth={true}>
+                <Link to='signup' smooth={true}>
                 <button className={`see-more flex items-center justify-center rounded-full h-[54px] w-[54px] ${
                     heroTheme === 'darkYello'
                     ? 'bg-darkYello'
@@ -157,10 +156,13 @@ function Home() {
 
 
     return (
-        <div>
+        <div className='home'>
             <Header />
-            <Hero />
-            <Login position="top-[100%]" />
+            <div>
+                <ColumnHeroPictures />
+                <Hero />
+                <SignUp position="top-[100%]" />
+            </div>
         </div>
     )
 }

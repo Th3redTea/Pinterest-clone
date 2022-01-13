@@ -30,7 +30,7 @@
 }
 
 
-.hero-text{
+.hero{
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,1) 5%, rgba(0,255,239,0) 100%);
 }
@@ -103,4 +103,8 @@ form, .termsservices{
 
 body{
     overflow-y: hidden;
+}
+
+.return-up  svg{
+    transform: rotate(180deg);
 }

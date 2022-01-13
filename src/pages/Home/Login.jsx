@@ -1,10 +1,10 @@
 import React, { useRef, useState}  from 'react'
 import { Icon } from '@iconify/react';
 import {Link} from 'react-scroll';
+import './styles.scss';
 
 
 function Form(){
-
 
     const emailRef = useRef(null)
     const passwordRef = useRef(null)
@@ -76,7 +76,7 @@ function Login({position}) {
             </div>
             <div className='w-[20%] relative'>
             <Link to='header' smooth={true}>
-                <button className={`see-more flex items-center justify-center rounded-full h-[54px] w-[54px] absolute top-[16px] ${
+                <button className={`return-up flex items-center justify-center rounded-full h-[54px] w-[54px] absolute top-[16px] ${
                     heroTheme === 'darkYello'
                     ? 'bg-darkYello'
                     : heroTheme === "green"
