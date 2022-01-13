@@ -61,7 +61,7 @@ function SignUp({position}) {
     return (
 
 
-            <div id='signup' className={`signup w-screen bg-black flex flex-row-reverse justify-between bg-black/[.7] absolute ${position} `}>
+            <div id='signup' className={`signup  w-screen bg-black flex flex-row-reverse justify-between bg-black/[.7] absolute ${position} `}>
                 <div className='h-screen w-[700px] bg-white rounded-3xl h-full relative flex flex-col'>
                         <button className='rounded-full bg-transparent hover:bg-gray h-[40px] w-[40px] flex justify-center items-center absolute right-3 top-3'><Icon icon="bi:x" width="38" /></button>
                     <div className='w-[40px] h-[40px] mt-6 mx-auto'>
