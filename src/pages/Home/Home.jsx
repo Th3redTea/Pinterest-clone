@@ -1,19 +1,20 @@
 import React, {useState} from 'react'
 import Header from '../../components/Header'
-import { flowers } from '../../helpers/HomeData'
+import { flowers} from '../../helpers/HomeData'
 import './styles.scss';
 import { Icon } from '@iconify/react';
 // import Login from './Login';
 import Slide from 'react-reveal/Slide';
 import {Link} from 'react-scroll';
 import SignUp from './SignUp';
+// import { createClient } from 'pexels';
 
 
 
 function ColumnHeroPictures({idx, src, alt}){
 
     return(
-        <div className='grid grid-cols-6 gap-4 -z-10 w-[1500px] bg-white relative'>
+        <div className='grid grid-cols-7 gap-4 -z-10 w-screen bg-white relative'>
             <Slide bottom>
 
             <div className='col1 mt-24'>
@@ -95,7 +96,21 @@ function ColumnHeroPictures({idx, src, alt}){
                         })
                     }
             </div>
-            </Slide>       
+            </Slide>  
+            <Slide bottom>
+
+            <div className='col mt-44'>
+                {
+                    
+                    flowers[0].col1.map((src, idex) => {
+                        return(
+                            
+                            <img id={idex} src={src.src} alt={src.alt} className='w-[236px] h-[350px] rounded-xl my-2' /> 
+                            )
+                        })
+                    }
+            </div>
+            </Slide>     
         </div>
     )
 }
@@ -103,12 +118,40 @@ function ColumnHeroPictures({idx, src, alt}){
 
 function Hero(){
 
+    
+    
     var [heroTheme, setHeroThem] = useState('darkYello');
- 
+
+    // let themes = ['darkYello', 'green', 'blue', 'darkGreen']
+    //     themes.map((item) => setTimeout(() => {
+    //             console.log(item);
+    //        }, 5000))
+
+
+    // //     useEffect(() => {
+    // //             const interval = 
+    // //             return () => clearInterval(interval);
+    // //         }
+        
+    // // }, []);
+
+
+    // useEffect(() => {
+    //         const client = createClient('563492ad6f9170000100000189e81b6da322402cb30fb2335bb21608');
+        
+    //         const query = 'Nature';
+        
+    //         client.photos.search({ query, per_page: 1 }).then(photos => {
+        
+    //             console.log(photos);
+    //         });
+    //     return [];
+    // }, [])
+
 
     return(
-        <div id='hero' className='hero mt-6 h-screen absolute top-0 ' >
-            <div className='hero-text w-full  bg-transparent flex flex-col items-center  w-screen mt-36'>
+        <div id='hero' className='hero mt-16 h-[90%] w-screen absolute top-0' >
+            <div className='hero-text bg-transparent flex flex-col items-center  w-screen mt-12'>
             <h1 className='text-6xl'>Get Your Next</h1>
               
                 {

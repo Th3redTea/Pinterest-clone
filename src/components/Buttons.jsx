@@ -13,7 +13,7 @@ export function CircledButton({bgColor, text, textColor, bgColorHover, dst}){
 export function FlatButton({textColor, text, dst, bgColor}){
     return(
         <>
-            <a href={dst} className={`bg-${bgColor} text-${textColor} hover:border-b-2 border-${textColor}`}>{text}</a>
+            
         </>
     )
 }
