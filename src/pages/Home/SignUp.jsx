@@ -1,6 +1,8 @@
-import React, {useRef, useState} from 'react'
+import React, {useRef, useContext} from 'react'
 import {Link} from 'react-scroll';
 import { Icon } from '@iconify/react';
+import {UserContext} from './Home';
+
 
 
 function Form(){
@@ -57,7 +59,9 @@ function Form(){
 }
 
 function SignUp({position}) {
-    var [heroTheme] = useState('darkYello');
+
+    const Color = useContext(UserContext);
+
     return (
 
 
@@ -84,17 +88,7 @@ function SignUp({position}) {
                 </div>
                 <div className='w-[20%] relative'>
                 <Link to='header' smooth={true}>
-                    <button className={`return-up flex items-center justify-center rounded-full h-[54px] w-[54px] absolute top-[16px] ${
-                        heroTheme === 'darkYello'
-                        ? 'bg-darkYello'
-                        : heroTheme === "green"
-                        ? 'bg-green'
-                        : heroTheme === "darkGreen"
-                        ? 'bg-darkGreen'
-                        : heroTheme === "blue"
-                        ? 'bg-bleu-100'
-                        : 'bg-darkYello'
-                    } absolute bottom-20`} ><Icon icon="ep:arrow-down-bold" color="white" width="36"/></button>
+                    <button className={`see-more flex items-center justify-center rounded-full h-[54px] w-[54px] bg-${Color} absolute top-6`} ><Icon icon="ep:arrow-down-bold" color="white" width="36"/></button>
                     </Link>
                 </div>
                 <div>

@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useReducer, createContext } from 'react'
 import Header from '../../components/Header'
-import { flowers} from '../../helpers/HomeData'
+import { flowers, decor, outfit, dinner} from '../../helpers/HomeData'
 import './styles.scss';
 import { Icon } from '@iconify/react';
 // import Login from './Login';
@@ -10,17 +10,63 @@ import SignUp from './SignUp';
 // import { createClient } from 'pexels';
 
 
+const initialState = {
+    Color: "darkYello",
+    textColor: "Weeknight dinner",
+    theme: dinner,
+};
 
-function ColumnHeroPictures({idx, src, alt}){
+const reducer = (state, action) => {
+    switch (action.type) {
+      case 'darkGreen':
+          return {
+            Color: "darkGreen",
+            text: "Home decor idea",
+            theme: decor,
+            
+           }
+           case 'blue':
+          return {
+              Color: "blue",
+              text: "Outfit look idea",
+              theme: outfit,
+            }
+            case 'darkYello':
+                return {
+                    Color: "darkYello",
+                    text: "Weeknight dinner",
+                    theme: dinner,
+                }
+                case 'green':
+                    return {
+                        Color: "green",
+                        text: "Green thumb idea",
+                        theme: flowers,
+                    }
+                    default:
+                        return state
+                    }
+                }
+                
+                
 
-    return(
-        <div className='grid grid-cols-7 gap-4 -z-10 w-screen bg-white relative'>
-            <Slide bottom>
+                function Hero({pictures}){
+                    const UserContext = createContext()
+                    // var [heroTheme, setHeroThem] = useState('darkYello');
+                    const [{text, theme, Color}, dispatch] = useReducer(reducer, initialState)
+                    console.log(theme[0].col1)
+                    
+                    
+                    return(
+                        <>
+                        <UserContext.Provider value={Color}>
+                            <div className='grid grid-cols-6 2xl:grid-cols-7 gap-4 -z-10 w-screen bg-white relative'>
+                        <Slide bottom>
 
-            <div className='col1 mt-24'>
+                    <div className='col1 mt-24'>
                 {
                     
-                    flowers[0].col1.map((src, idex) => {
+                    theme[0].col1.map((src, idex) => {
                         return(
                             
                             <img id={idex} src={src.src} alt={src.alt} className='w-[236px] h-[350px] rounded-xl my-2' /> 
@@ -33,7 +79,7 @@ function ColumnHeroPictures({idx, src, alt}){
             <div className='col2 mt-72'>
                 {
                     
-                    flowers[0].col2.map((src, idex) => {
+                    theme[0].col2.map((src, idex) => {
                         return(
                             
                             <img id={idex} src={src.src} alt={src.alt} className='w-[236px] h-[350px] rounded-xl my-2' /> 
@@ -47,7 +93,7 @@ function ColumnHeroPictures({idx, src, alt}){
             <div className='col3 mt-96'>
                 {
                     
-                    flowers[0].col3.map((src, idex) => {
+                    theme[0].col3.map((src, idex) => {
                         return(
                             
                             <img id={idex} src={src.src} alt={src.alt} className='w-[236px] h-[350px] rounded-xl my-2' /> 
@@ -61,7 +107,7 @@ function ColumnHeroPictures({idx, src, alt}){
             <div className='col4 mt-96'>
                 {
                     
-                    flowers[0].col4.map((src, idex) => {
+                    theme[0].col4.map((src, idex) => {
                         return(
                             
                             <img id={idex} src={src.src} alt={src.alt} className='w-[236px] h-[350px] rounded-xl my-2' /> 
@@ -75,7 +121,7 @@ function ColumnHeroPictures({idx, src, alt}){
             <div className='col5 mt-72'>
                 {
                     
-                    flowers[0].col5.map((src, idex) => {
+                    theme[0].col5.map((src, idex) => {
                         return(
                             
                             <img id={idex} src={src.src} alt={src.alt} className='w-[236px] h-[350px] rounded-xl my-2' /> 
@@ -88,7 +134,7 @@ function ColumnHeroPictures({idx, src, alt}){
             <div className='col6 mt-24'>
                 {
                     
-                    flowers[0].col6.map((src, idex) => {
+                    theme[0].col6.map((src, idex) => {
                         return(
                             
                             <img id={idex} src={src.src} alt={src.alt} className='w-[236px] h-[350px] rounded-xl my-2' /> 
@@ -97,12 +143,12 @@ function ColumnHeroPictures({idx, src, alt}){
                     }
             </div>
             </Slide>  
-            <Slide bottom>
+            {/* <Slide bottom>
 
             <div className='col mt-44'>
                 {
                     
-                    flowers[0].col1.map((src, idex) => {
+                    theme[0].col1.map((src, idex) => {
                         return(
                             
                             <img id={idex} src={src.src} alt={src.alt} className='w-[236px] h-[350px] rounded-xl my-2' /> 
@@ -110,88 +156,32 @@ function ColumnHeroPictures({idx, src, alt}){
                         })
                     }
             </div>
-            </Slide>     
+            </Slide>      */}
         </div>
-    )
-}
-
-
-function Hero(){
-
-    
-    
-    var [heroTheme, setHeroThem] = useState('darkYello');
-
-    // let themes = ['darkYello', 'green', 'blue', 'darkGreen']
-    //     themes.map((item) => setTimeout(() => {
-    //             console.log(item);
-    //        }, 5000))
-
-
-    // //     useEffect(() => {
-    // //             const interval = 
-    // //             return () => clearInterval(interval);
-    // //         }
-        
-    // // }, []);
-
-
-    // useEffect(() => {
-    //         const client = createClient('563492ad6f9170000100000189e81b6da322402cb30fb2335bb21608');
-        
-    //         const query = 'Nature';
-        
-    //         client.photos.search({ query, per_page: 1 }).then(photos => {
-        
-    //             console.log(photos);
-    //         });
-    //     return [];
-    // }, [])
-
-
-    return(
         <div id='hero' className='hero mt-16 h-[90%] w-screen absolute top-0' >
             <div className='hero-text bg-transparent flex flex-col items-center  w-screen mt-12'>
             <h1 className='text-6xl'>Get Your Next</h1>
-              
-                {
-                   heroTheme === 'green' 
-                            ? <h1 className='green text-6xl text-green'><Slide bottom> Green thumb idea</Slide></h1> 
-                            : heroTheme === 'blue'
-                            ?  <h1 className='blue text-6xl text-bleu-100'><Slide bottom>New look outfit</Slide></h1> 
-                            : heroTheme === 'darkYello'
-                            ?  <h1 className='dinner text-6xl text-darkYello'><Slide bottom>Weeknight dinner</Slide></h1> 
-                            : heroTheme === "darkGreen"
-                            ?  <h1 className='home text-6xl text-darkGreen'><Slide bottom>Home decor idea</Slide></h1> 
-                            :  <h1 className='green text-6xl text-green'><Slide bottom>Green thumb idea</Slide></h1> 
-                }
+            <h1 className={`text-6xl text-${Color}`}><Slide bottom>{text ?? "Weeknight dinner"}</Slide></h1> 
 
 
                 <div className='hero-nave flex w-[100px] justify-between mt-8'>
 
-                <button onClick={() => setHeroThem("darkYello")} className={`h-3 w-3 bg-gray rounded-full ${heroTheme === "darkYello" ? "bg-darkYello" : "gray"}`}></button>
+                <button onClick={() => dispatch({type: "darkYello"})} className={`h-3 w-3 bg-gray rounded-full ${Color === "darkYello" ? 'bg-darkYello' : 'gray' }`}></button>
 
-                <button onClick={() => setHeroThem("blue")} className={`h-3 w-3 bg-gray rounded-full ${heroTheme === "blue" ? "bg-bleu-100" : "gray"}`}></button>
+                <button onClick={() => dispatch({type: "blue"})} className={`h-3 w-3 bg-gray rounded-full ${Color === "blue" ? 'bg-blue' : 'gray' }`}></button>
 
-                <button onClick={() => setHeroThem("darkGreen")} className={`h-3 w-3 bg-gray rounded-full ${heroTheme === "darkGreen" ? "bg-darkGreen" : "gray"}`}></button>
+                <button onClick={() => dispatch({type: "darkGreen"})} className={`h-3 w-3 bg-gray rounded-full ${Color === "darkGreen" ? 'bg-darkGreen' : 'gray' }`}></button>
 
-                <button onClick={() => setHeroThem("green")} className={`h-3 w-3 bg-gray rounded-full ${heroTheme === "green" ? "bg-green" : "gray"}`}></button>
+                <button onClick={() => dispatch({type: "green"})} className={`h-3 w-3 bg-gray rounded-full ${Color === "green" ? 'bg-green' : 'gray' }`}></button>
                 </div>
                 <Link to='signup' smooth={true}>
-                <button className={`see-more flex items-center justify-center rounded-full h-[54px] w-[54px] ${
-                    heroTheme === 'darkYello'
-                    ? 'bg-darkYello'
-                    : heroTheme === "green"
-                    ? 'bg-green'
-                    : heroTheme === "darkGreen"
-                    ? 'bg-darkGreen'
-                    : heroTheme === "blue"
-                    ? 'bg-bleu-100'
-                    : 'bg-darkYello'
-                } absolute bottom-20`} ><Icon icon="ep:arrow-down-bold" color="white" width="36"/></button>
+                <button className={`see-more flex items-center justify-center rounded-full h-[54px] w-[54px] bg-${Color} absolute bottom-20`} ><Icon icon="ep:arrow-down-bold" color="white" width="36"/></button>
                 </Link>
             </div>
         </div>
+        </UserContext.Provider>
+        </>
+
     )
 }
 
@@ -202,7 +192,6 @@ function Home() {
         <div className='home'>
             <Header />
             <div>
-                <ColumnHeroPictures />
                 <Hero />
                 <SignUp position="top-[100%]" />
             </div>

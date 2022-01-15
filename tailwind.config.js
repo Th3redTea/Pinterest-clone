@@ -7,7 +7,7 @@ module.exports = {
       transparent: 'transparent',
       'vermilion-100' : '#e60023',
       'vermilion-200' : '#b32505',
-      'bleu-100': '#428bff',
+      'blue': '#428bff',
       'green-100': '#008a05',
       'orange-100': '#e07912',
        white: '#fff',
