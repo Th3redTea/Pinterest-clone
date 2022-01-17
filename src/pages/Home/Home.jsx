@@ -143,25 +143,12 @@ const reducer = (state, action) => {
                     }
             </div>
             </Slide>  
-            {/* <Slide bottom>
 
-            <div className='col mt-44'>
-                {
-                    
-                    theme[0].col1.map((src, idex) => {
-                        return(
-                            
-                            <img id={idex} src={src.src} alt={src.alt} className='w-[236px] h-[350px] rounded-xl my-2' /> 
-                            )
-                        })
-                    }
-            </div>
-            </Slide>      */}
         </div>
         <div id='hero' className='hero mt-16 h-[90%] w-screen absolute top-0' >
             <div className='hero-text bg-transparent flex flex-col items-center  w-screen mt-12'>
-            <h1 className='text-6xl'>Get Your Next</h1>
-            <h1 className={`text-6xl text-${Color}`}><Slide bottom>{text ?? "Weeknight dinner"}</Slide></h1> 
+            <h1 className='text-6xl '>Get Your Next</h1>
+            <h1 className={`text-6xl text-${Color} `}><Slide bottom>{text ?? "Weeknight dinner"}</Slide></h1> 
 
 
                 <div className='hero-nave flex w-[100px] justify-between mt-8'>
