@@ -1,7 +1,6 @@
-import React, {useRef, useContext} from 'react'
+import React, {useRef} from 'react'
 import {Link} from 'react-scroll';
 import { Icon } from '@iconify/react';
-import {UserContext} from './Home';
 
 
 
@@ -60,7 +59,6 @@ function Form(){
 
 function SignUp({position}) {
 
-    const Color = useContext(UserContext);
 
     return (
 
@@ -88,7 +86,7 @@ function SignUp({position}) {
                 </div>
                 <div className='w-[20%] relative'>
                 <Link to='header' smooth={true}>
-                    <button className={`see-more flex items-center justify-center rounded-full h-[54px] w-[54px] bg-${Color} absolute top-6`} ><Icon icon="ep:arrow-down-bold" color="white" width="36"/></button>
+                    <button className={`see-more flex items-center justify-center rounded-full h-[54px] w-[54px] bg-blue absolute top-6`} ><Icon icon="ep:arrow-down-bold" color="white" width="36"/></button>
                     </Link>
                 </div>
                 <div>
