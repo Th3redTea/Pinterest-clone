@@ -1,5 +1,4 @@
-import React from 'react'
-// import { FlatButton } from './Buttons'
+import React, {useState, useContext} from 'react'
 import '../pages/Home/styles.scss';
 
 
@@ -18,6 +17,9 @@ export function Logo() {
 
 
 function NavBar() {
+
+    var [isLogin, setLogin] = useState(true);
+
     return (
         <div className='flex  justify-around '>
             <div className=''>
@@ -28,7 +30,7 @@ function NavBar() {
                 </ul>
             </div>
             <div className='w-[50%] ml-6'>
-                <a href="login" className="mx-2 px-4 py-3 bg-vermilion-100 rounded-full text-white hover:bg-vermilion-200">Log in</a>
+                <a  onClick={() => setLogin(!true)} href="login" className="mx-2 px-4 py-3 bg-vermilion-100 rounded-full text-white hover:bg-vermilion-200">Log in</a>
                 <a href="signup" className="px-4 py-3 bg-gray rounded-full  text-black hover:bg-gray-200">Sign up</a>
             </div>
         </div>

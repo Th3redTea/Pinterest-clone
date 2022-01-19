@@ -7,12 +7,13 @@ import { Icon } from '@iconify/react';
 import Slide from 'react-reveal/Slide';
 import {Link} from 'react-scroll';
 import SignUp from './SignUp';
+import Login from './Login';
 // import { createClient } from 'pexels';
 
 
 const initialState = {
     Color: "darkYello",
-    textColor: "Weeknight dinner",
+    text: "Weeknight dinner",
     theme: dinner,
 };
 
@@ -147,8 +148,11 @@ const reducer = (state, action) => {
         </div>
         <div id='hero' className='hero mt-16 h-[90%] w-screen absolute top-0' >
             <div className='hero-text bg-transparent flex flex-col items-center  w-screen mt-12'>
+           
             <h1 className='text-6xl '>Get Your Next</h1>
-            <h1 className={`text-6xl text-${Color} `}><Slide bottom>{text ?? "Weeknight dinner"}</Slide></h1> 
+           
+           
+            <h1 style={{ color: `$`}} className={`text-6xl`}><Slide bottom>{text ?? "Weeknight dinner"}</Slide></h1> 
 
 
                 <div className='hero-nave flex w-[100px] justify-between mt-8'>
@@ -179,6 +183,7 @@ function Home() {
         <div className='home'>
             <Header />
             <div>
+                <Login position="top-0"/>
                 <Hero />
                 <SignUp position="top-[100%]" />
             </div>
