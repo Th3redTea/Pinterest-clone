@@ -65,7 +65,7 @@ function Login({position}) {
                 <h1 className='text-center text-4xl mt-2 text-[#333333] mx-auto'>Welcome to Pinterest</h1>
                 <Form />
                 <a href='/forgetpassword' className='forgetpassword text-black text-start w-[60%] mx-auto hover:decoration-solid decoration-black'>Forgot your password?</a>
-                <button onClick={handleLogin} className='w-[60%] text-center mx-auto rounded-2xl py-2 mt-6 text-white bg-vermilion-100 hover:bg-vermilion-200'>Log in</button>
+                <button className='w-[60%] text-center mx-auto rounded-2xl py-2 mt-6 text-white bg-vermilion-100 hover:bg-vermilion-200'>Log in</button>
                 <p className='text-center text-[16px] my-2 text-[#333333]'>OR</p>
                 <button className='facebooklogin w-[60%] text-center mx-auto rounded-full py-1 px-4 text-lg text-white bg-blue flex justify-between items-center'><Icon icon="bx:bxl-facebook-circle" color="white" width="32" /> Continue with Facebook</button>
                 <button className='googlelogin w-[60%] text-center mx-auto rounded-full py-1 px-4 text-lg  mt-2 text-[#333333] border-2 border-gray bg-transparent flex justify-between items-center'><Icon icon="flat-color-icons:google" color="white" width="32" />Continue with Google</button>
