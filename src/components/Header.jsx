@@ -1,6 +1,7 @@
-import React, {useState, useContext} from 'react'
+import React, { useContext} from 'react'
 import '../pages/Home/styles.scss';
 import { Link } from 'react-scroll';
+import { isLoginContext } from '../pages/Home/Home';
 
 
 
@@ -18,7 +19,12 @@ export function Logo() {
 
 
 function NavBar() {
-
+    let [isloginPage, setLoginPage] = useContext(isLoginContext)
+    
+    const handleLogin = () => {
+        console.log(isloginPage)
+        setLoginPage(!isloginPage)
+    }
 
     return (
         <div className='flex  justify-around '>
@@ -30,7 +36,9 @@ function NavBar() {
                 </ul>
             </div>
             <div className='w-[50%] ml-6'>
-                <a  href="login" className="mx-2 px-4 py-3 bg-vermilion-100 rounded-full text-white hover:bg-vermilion-200">Log in</a>
+                <Link to='login'>
+                    <a  onClick={handleLogin} href="login" className="mx-2 px-4 py-3 bg-vermilion-100 rounded-full text-white hover:bg-vermilion-200">Log in</a>
+                </Link>
                 <Link to='signup' smooth={true}>
                 <a href="signup" className="px-4 py-3 bg-gray rounded-full  text-black hover:bg-gray-200">Sign up</a>
                 </Link >

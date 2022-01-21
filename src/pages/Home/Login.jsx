@@ -1,6 +1,7 @@
-import React, { useRef, useState}  from 'react'
+import React, { useRef, useContext}  from 'react'
 import { Icon } from '@iconify/react';
 import './styles.scss';
+import { isLoginContext } from './Home'; 
 
 
 function Form(){
@@ -45,18 +46,17 @@ function Form(){
 }
 
 
-
 function Login({position}) {
+    
+    let  [isloginPage, setLoginPage] = useContext(isLoginContext)
 
-    const [isLogin, setLogin] = useState(true)
-
-    const handleLogin = (e) => {
-        e.preventDefault()
-        setLogin(!true)
+    const handleLogin = () => {
+        console.log(isloginPage)
+        setLoginPage(!isloginPage)        
     }
 
     return (
-        <div id='login' className={`login h-screen w-screen bg-black flex flex-row-reverse justify-between bg-black/[.7] absolute ${position}  ${isLogin ? 'visible' : 'hidden'}`}>
+        <div id='login' className={`login h-screen w-screen bg-black flex flex-row-reverse justify-between bg-black/[.7] absolute ${position}  }`}>
             <div className='h-screen w-[35%] bg-white rounded-3xl  relative flex flex-col mx-auto'>
                     <button onClick={handleLogin} className='rounded-full bg-transparent hover:bg-gray h-[40px] w-[40px] flex justify-center items-center absolute right-3 top-3'><Icon icon="bi:x" width="38" /></button>
                 <div className='w-[40px] h-[40px] mt-6 mx-auto'>

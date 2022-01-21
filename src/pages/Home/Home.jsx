@@ -1,4 +1,4 @@
-import React, {useReducer, createContext } from 'react'
+import React, {useReducer, createContext, useState} from 'react'
 import Header from '../../components/Header'
 import { flowers, decor, outfit, dinner} from '../../helpers/HomeData'
 import './styles.scss';
@@ -176,17 +176,22 @@ const reducer = (state, action) => {
     )
 }
 
+export const isLoginContext = createContext(null);
 function Home() {
-
+    const [isloginPage, setLoginPage] = useState(false)
 
     return (
         <div className='home'>
+                <isLoginContext.Provider value={[isloginPage, setLoginPage]}>
             <Header />
             <div>
+                <div className={isloginPage ? 'visible' : 'invisible'}>
                 <Login position="top-0"/>
-                <Hero />
+                </div>
+                    <Hero />
                 <SignUp position="top-[100%]" />
             </div>
+                </isLoginContext.Provider>
         </div>
     )
 }
